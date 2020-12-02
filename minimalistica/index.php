@@ -2,6 +2,8 @@
 $h1 = 'Заголовок станицы';
 $title = 'Название страницы';
 $year = date('Y');
+
+$menu = ["home", "archive", "contact",];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -17,10 +19,19 @@ $year = date('Y');
 		<h1><?=$h1 ?></h1>
 		
 		<ul id="menu">
+			<?php
+				for ($i = 0; $i <= count($menu); $i++):?>
+					<li><a href="#"><?= $menu[$i] ?></a></li>
+					<?php
+				endfor; 
+			?>			
+		</ul> 
+
+		<!-- <ul id="menu">
 			<li><a href="#">home</a></li>
 			<li><a href="#">archive</a></li>
 			<li><a href="#">contact</a></li>
-		</ul>
+		</ul> -->
 	
 		<div class="post">
 			<div class="details">

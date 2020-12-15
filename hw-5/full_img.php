@@ -11,24 +11,31 @@
 
         <?php
             include "config.php";
+            
             $id = $_GET['id'];
 
-            $sqlCountUpdate = "update images set count=count+1 where id=$id";
-            $resCountUpdate = mysqli_query($connect,$sqlCountUpdate);
-            
-            $sqlCount= "select count from images where id=$id";
-            $resCount = mysqli_query($connect,$sqlCount);
-            $count = mysqli_fetch_assoc($resCount);
+            $sqlImage= "select * from images where id=$id";
+            $image = mysqli_fetch_assoc(mysqli_query($connect,$sqlImage));
 
-            $sql= "select * from images where id=$id";
-            $res = mysqli_query($connect,$sql);
-            $data = mysqli_fetch_assoc($res);
+            $sqlCountUpdate = "update images set count=count+1 where id=$id";
+            mysqli_query($connect,$sqlCountUpdate);
+
+            // $sqlCountUpdate = "update images set count=count+1 where id=$id";
+            // $resCountUpdate = mysqli_query($connect,$sqlCountUpdate);
+            
+            // $sqlCount= "select count from images where id=$id";
+            // $resCount = mysqli_query($connect,$sqlCount);
+            // $count = mysqli_fetch_assoc($resCount);
+
+            // $sql= "select * from images where id=$id";
+            // $res = mysqli_query($connect,$sql);
+            // $data = mysqli_fetch_assoc($res);
 
         ?>
 
-        <img class="gallery_img width_1400" src="big/<?=$data['name']  ?>" alt="photo <?=$data['name'] ?>">
+        <img class="gallery_img width_1400" src="big/<?=$image['name']  ?>" alt="photo <?=$image['name'] ?>">
         <div class="photo_txt">
-            <p class="photo_txt_p" >Просмотры: <?=$count['count'] ?></p>
+            <p class="photo_txt_p" >Просмотры: <?=$image['count'] ?></p>
             <a href="<?= $_SERVER['HTTP_REFERER']?>">Назад</a>
         </div>
     </div>

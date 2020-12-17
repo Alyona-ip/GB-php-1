@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.gallery {
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+
+.gallery_img {
+    margin: 10px;
+}
+
+.width {
+    width: 400px;
+}
+
+.width_1400 {
+    width: 1400px;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.photo_txt {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}

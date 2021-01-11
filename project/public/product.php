@@ -1,9 +1,6 @@
 <?php
-    include "config.php";
-    $id=$_GET['id'];
-    $sql= "select * from goods where id=$id";
-    $res = mysqli_query($connect,$sql);
-    $product = mysqli_fetch_assoc($res)
+    include "../models/products.php";
+    $product = getProduct($connect, (int)$_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +16,7 @@
     
 <div class="container">
     <?php 
-        include "header.php";
+        include "../templates/header.php";
     ?>
 
     <div class="products">

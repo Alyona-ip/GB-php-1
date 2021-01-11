@@ -1,11 +1,3 @@
-<?php
-    include "../config.php";
-    $id = $_GET['id'];
-    $sql = "select * from goods where id=$id";
-    $res = mysqli_query($connect,$sql);
-    $product = mysqli_fetch_assoc($res);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../public/style/style.css">
 </head>
 <body>
     
 <div class="container">
     <?php 
-        include "header.php";
+        include "../templates/editHeader.php";
     ?>
 
     <div class="products">
 
-        <form action="shopServer.php?action=add" method="post" enctype="multipart/form-data">
+        <form action="../models/productsServer.php?action=add" method="post" enctype="multipart/form-data">
 
             <div class="edit_product_item">
 

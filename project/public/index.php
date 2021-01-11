@@ -1,7 +1,5 @@
 <?php
-    include "config.php";
-    $sql= "select * from goods";
-    $res = mysqli_query($connect,$sql);
+    include "../models/products.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +16,14 @@
 
 <div class="container">
     <?php 
-        include "header.php";
+        include "../templates/header.php";
     ?>
 
     <div class="goods">
 
     <?php
-        while($good = mysqli_fetch_assoc($res)):
+        $goods = getProducts($connect);
+        foreach($goods as $good):
     ?>
         <div class="goods_item">
             <div class="goods_img">
@@ -36,7 +35,7 @@
             </div>
         </div> <!-- product_item -->
     <?php 
-        endwhile 
+        endforeach;
     ?>
 
     </div> <!-- products -->

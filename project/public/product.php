@@ -41,10 +41,13 @@
                     <p class="product_info_text"><b>Material</b> / <?=$product['material'] ?></p>
                 </div> <!-- product_info_block -->
 
-                <div class="product_btn">
-                    <button class="btn">Add to cart</button>
-                    <button class="btn">Buy now</button>
-                </div>
+                <form action="#">
+                    <div class="product_btn">
+                        <button class="btn">Add to cart</button>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </form>
+                
                 
             </div> <!-- product_info -->
         </div> <!-- product_item -->
